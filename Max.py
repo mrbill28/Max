@@ -187,13 +187,13 @@ def backupData():
 
 def helpmessage():
     helpMessage = "╔══[☢ ŦΣÄM ƉØÑØVÄÑ ☢]" + "\n" + \
-                  "╠ Help" + "\n" + \
-                  "╠ Translate" + "\n" + \
-                  "╠ TextToSpeech" + "\n" + \
+                  "╠ คำสั่ง" + "\n" + \
+                  "╠ คำสั่ง2" + "\n" + \
+                  "╠ คำสั่ง3" + "\n" + \
                   "╠══[ Status Command ]" + "\n" + \
                   "╠ Restart" + "\n" + \
                   "╠ Runtime" + "\n" + \
-                  "╠ Speed" + "\n" + \
+                  "╠ Sp" + "\n" + \
                   "╠ Status" + "\n" + \
                   "╠ About" + "\n" + \
                   "╠══[ Settings Command ]" + "\n" + \
@@ -204,13 +204,13 @@ def helpmessage():
                   "╠ CheckSticker「On/Off」" + "\n" + \
                   "╠ DetectMention「On/Off」" + "\n" + \
                   "╠══[ Self Command ]" + "\n" + \
-                  "╠ Me" + "\n" + \
-                  "╠ MyMid" + "\n" + \
-                  "╠ MyName" + "\n" + \
-                  "╠ MyBio" + "\n" + \
-                  "╠ MyPicture" + "\n" + \
-                  "╠ MyVideoProfile" + "\n" + \
-                  "╠ MyCover" + "\n" + \
+                  "╠ บิว" + "\n" + \
+                  "╠ มิด" + "\n" + \
+                  "╠ บิว2" + "\n" + \
+                  "╠ ตัส" + "\n" + \
+                  "╠ ดิส" + "\n" + \
+                  "╠ วีดีโอ" + "\n" + \
+                  "╠ ปก" + "\n" + \
                   "╠ StealContact「Mention」" + "\n" + \
                   "╠ StealMid「Mention」" + "\n" + \
                   "╠ StealName「Mention」" + "\n" + \
@@ -458,18 +458,18 @@ def lineBot(op):
                 if text is None:
                     return
 #==============================================================================#
-                if text.lower() == 'help':
+                if text.lower() == 'คำสั่ง':
                     helpMessage = helpmessage()
                     line.sendMessage(to, str(helpMessage))
                     line.sendContact(to, "u283825ccd9c7b996bbe31c312a80489c")
-                elif text.lower() == 'texttospeech':
+                elif text.lower() == 'คำสั่ง3':
                     helpTextToSpeech = helptexttospeech()
                     line.sendMessage(to, str(helpTextToSpeech))
-                elif text.lower() == 'translate':
+                elif text.lower() == 'คำสั่ง2':
                     helpTranslate = helptranslate()
                     line.sendMessage(to, str(helpTranslate))
 #==============================================================================#
-                elif text.lower() == 'speed':
+                elif text.lower() == 'sp':
                     start = time.time()
                     line.sendMessage(to, "☢ ŦΣÄM ƉØÑØVÄÑ ☢")
                     elapsed_time = time.time() - start
@@ -560,25 +560,25 @@ def lineBot(op):
                     settings["datectMention"] = False
                     line.sendMessage(to, "Berhasil menonaktifkan Detect Mention")
 #==============================================================================#
-                elif text.lower() == 'me':
+                elif text.lower() == 'บิว':
                     sendMessageWithMention(to, lineMID)
                     line.sendContact(to, lineMID)
-                elif text.lower() == 'mymid':
+                elif text.lower() == 'มิด':
                     line.sendMessage(msg.to,"[MID]\n" +  lineMID)
-                elif text.lower() == 'myname':
+                elif text.lower() == 'บิว2':
                     me = line.getContact(lineMID)
                     line.sendMessage(msg.to,"[DisplayName]\n" + me.displayName)
-                elif text.lower() == 'mybio':
+                elif text.lower() == 'ตัส':
                     me = line.getContact(lineMID)
                     line.sendMessage(msg.to,"[StatusMessage]\n" + me.statusMessage)
-                elif text.lower() == 'mypicture':
+                elif text.lower() == 'ดิส':
                     me = line.getContact(lineMID)
                     line.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/" + me.pictureStatus)
-                elif text.lower() == 'myvideoprofile':
+                elif text.lower() == 'วีดีโอ':
                     me = line.getContact(lineMID)
                     line.sendVideoWithURL(msg.to,"http://dl.profile.line-cdn.net/" + me.pictureStatus + "/vp")
-                elif text.lower() == 'mycover':
-                    me = line.getContact(lineMID)
+                elif text.lower() == 'ปก':
+                    me = line.getContact(l_ineMID)
                     cover = line.getProfileCoverURL(lineMID)    
                     line.sendImageWithURL(msg.to, cover)
                 elif msg.text.lower().startswith("stealcontact "):
