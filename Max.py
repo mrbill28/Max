@@ -186,7 +186,7 @@ def backupData():
         return False
 
 def helpmessage():
-    helpMessage = "╔══[☢ ŦΣÄM ƉØÑØVÄÑ ☢]" + "\n" + \
+    helpMessage = "╔══[☢ ─┅═ই☣さণさபิວ☣ই═┅─ ☢]" + "\n" + \
                   "╠ คำสั่ง" + "\n" + \
                   "╠ คำสั่ง2" + "\n" + \
                   "╠ คำสั่ง3" + "\n" + \
@@ -211,14 +211,14 @@ def helpmessage():
                   "╠ ดิส" + "\n" + \
                   "╠ วีดีโอ" + "\n" + \
                   "╠ ปก" + "\n" + \
-                  "╠ StealContact「Mention」" + "\n" + \
-                  "╠ StealMid「Mention」" + "\n" + \
-                  "╠ StealName「Mention」" + "\n" + \
-                  "╠ StealBio「Mention」" + "\n" + \
-                  "╠ StealPicture「Mention」" + "\n" + \
-                  "╠ StealVideoProfile「Mention」" + "\n" + \
-                  "╠ StealCover「Mention」" + "\n" + \
-                  "╠ CloneProfile「Mention」" + "\n" + \
+                  "╠ StealContact「แทค」" + "\n" + \
+                  "╠ StealMid「แทค」" + "\n" + \
+                  "╠ StealName「แทค」" + "\n" + \
+                  "╠ StealBio「แทค」" + "\n" + \
+                  "╠ StealPicture「แทค」" + "\n" + \
+                  "╠ StealVideoProfile「แทค」" + "\n" + \
+                  "╠ StealCover「แทค」" + "\n" + \
+                  "╠ CloneProfile「แทค」" + "\n" + \
                   "╠ RestoreProfile" + "\n" + \
                   "╠══[ Group Command ]" + "\n" + \
                   "╠ GroupCreator" + "\n" + \
@@ -248,11 +248,11 @@ def helpmessage():
                   "╠ SearchLyric「Search」" + "\n" + \
                   "╠ SearchImage「Search」" + "\n" + \
                   "╠ ScreenshootWebsite「LinkURL」" + "\n" + \
-                  "╚══[☢ ŦΣÄM ƉØÑØVÄÑ ☢]"
+                  "╚══[☢ ─┅═ই☣さণさபิວ☣ই═┅─ ☢]"
     return helpMessage
     
 def helptexttospeech():
-    helpTextToSpeech =   "╔══[☢ ŦΣÄM ƉØÑØVÄÑ ☢]" + "\n" + \
+    helpTextToSpeech =   "╔══[☢ ─┅═ই☣さণさபิວ☣ই═┅─ ☢]" + "\n" + \
                          "╠ af : Afrikaans" + "\n" + \
                          "╠ sq : Albanian" + "\n" + \
                          "╠ ar : Arabic" + "\n" + \
@@ -307,7 +307,7 @@ def helptexttospeech():
                          "╠ vi : Vietnamese" + "\n" + \
                          "╠ cy : Welsh" + "\n" + \
                          "╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
-                          "Contoh : IDLine 2000m."
+                          "Contoh : IDLine bill_28"
     return helpTextToSpeech
     
 def helptranslate():
@@ -419,7 +419,7 @@ def helptranslate():
                        "╠ fil : Filipino" + "\n" + \
                        "╠ he : Hebrew" + "\n" + \
                        "╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
-                         "Contoh : IDline 2000m."
+                         "Contoh : IDline bill_28"
     return helpTranslate
 #==============================================================================#
 def lineBot(op):
