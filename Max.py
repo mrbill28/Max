@@ -191,11 +191,11 @@ def helpmessage():
                   "╠ คำสั่ง2" + "\n" + \
                   "╠ คำสั่ง3" + "\n" + \
                   "╠══[ Status Command ]" + "\n" + \
-                  "╠ Restart" + "\n" + \
-                  "╠ Runtime" + "\n" + \
-                  "╠ Sp" + "\n" + \
-                  "╠ Status" + "\n" + \
-                  "╠ About" + "\n" + \
+                  "╠ รีบอท" + "\n" + \
+                  "╠ ออน" + "\n" + \
+                  "╠ จรวด" + "\n" + \
+                  "╠ เชคค่า" + "\n" + \
+                  "╠ ข้อมูล" + "\n" + \
                   "╠══[ Settings Command ]" + "\n" + \
                   "╠ AutoAdd「On/Off」" + "\n" + \
                   "╠ AutoJoin「On/Off」" + "\n" + \
@@ -469,20 +469,20 @@ def lineBot(op):
                     helpTranslate = helptranslate()
                     line.sendMessage(to, str(helpTranslate))
 #==============================================================================#
-                elif text.lower() == 'sp':
+                elif text.lower() == 'จรวด':
                     start = time.time()
-                    line.sendMessage(to, "☢ ŦΣÄM ƉØÑØVÄÑ ☢")
+                    line.sendMessage(to, "☢ ─┅═ই☣さণさபิວ☣ই═┅─ ☢")
                     elapsed_time = time.time() - start
                     line.sendMessage(to,format(str(elapsed_time)))
-                elif text.lower() == 'restart':
+                elif text.lower() == 'รีบอท':
                     line.sendMessage(to, "Please....")
                     restartBot()
-                elif text.lower() == 'runtime':
+                elif text.lower() == 'ออน':
                     timeNow = time.time()
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
                     line.sendMessage(to, "тнє вσт нαѕ вєєи яυииιиg {}".format(str(runtime)))
-                elif text.lower() == 'about':
+                elif text.lower() == 'ข้อมูล':
                     try:
                         arr = []
                         owner = "u283825ccd9c7b996bbe31c312a80489c"
@@ -504,7 +504,7 @@ def lineBot(op):
                     except Exception as e:
                         line.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'status':
+                elif text.lower() == 'เชคค่า':
                     try:
                         ret_ = "╔══[ Status ]"
                         if settings["autoAdd"] == True: ret_ += "\n╠ Auto Add ✅"
