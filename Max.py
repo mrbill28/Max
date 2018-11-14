@@ -197,12 +197,12 @@ def helpmessage():
                   "╠ เชคค่า" + "\n" + \
                   "╠ ข้อมูล" + "\n" + \
                   "╠══[ Settings Command ]" + "\n" + \
-                  "╠ AutoAdd「On/Off」" + "\n" + \
-                  "╠ AutoJoin「On/Off」" + "\n" + \
-                  "╠ AutoLeave「On/Off」" + "\n" + \
-                  "╠ AutoRead「On/Off」" + "\n" + \
-                  "╠ CheckSticker「On/Off」" + "\n" + \
-                  "╠ DetectMention「On/Off」" + "\n" + \
+                  "╠ ออโต้บล็อค「On/Off」" + "\n" + \
+                  "╠ เข้ากลุ่ม「On/Off」" + "\n" + \
+                  "╠ เข้าแชทรวม「On/Off」" + "\n" + \
+                  "╠ อ่าน「On/Off」" + "\n" + \
+                  "╠ เชคติ๊ก「On/Off」" + "\n" + \
+                  "╠ แทคเจ็บ「On/Off」" + "\n" + \
                   "╠══[ Self Command ]" + "\n" + \
                   "╠ บิว" + "\n" + \
                   "╠ มิด" + "\n" + \
@@ -211,15 +211,15 @@ def helpmessage():
                   "╠ ดิส" + "\n" + \
                   "╠ วีดีโอ" + "\n" + \
                   "╠ ปก" + "\n" + \
-                  "╠ StealContact「แทค」" + "\n" + \
-                  "╠ StealMid「แทค」" + "\n" + \
-                  "╠ StealName「แทค」" + "\n" + \
-                  "╠ StealBio「แทค」" + "\n" + \
-                  "╠ StealPicture「แทค」" + "\n" + \
-                  "╠ StealVideoProfile「แทค」" + "\n" + \
-                  "╠ StealCover「แทค」" + "\n" + \
-                  "╠ CloneProfile「แทค」" + "\n" + \
-                  "╠ RestoreProfile" + "\n" + \
+                  "╠ คท「แทค」" + "\n" + \
+                  "╠ มิด「แทค」" + "\n" + \
+                  "╠ ชื่อ「แทค」" + "\n" + \
+                  "╠ ตัส「แทค」" + "\n" + \
+                  "╠ ดิส「แทค」" + "\n" + \
+                  "╠ วีดีโอ「แทค」" + "\n" + \
+                  "╠ ปก「แทค」" + "\n" + \
+                  "╠ ขอปก「แทค」" + "\n" + \
+                  "╠ เเปลงปก" + "\n" + \
                   "╠══[ Group Command ]" + "\n" + \
                   "╠ GroupCreator" + "\n" + \
                   "╠ GroupId" + "\n" + \
@@ -523,40 +523,40 @@ def lineBot(op):
                         line.sendMessage(to, str(ret_))
                     except Exception as e:
                         line.sendMessage(msg.to, str(e))
-                elif text.lower() == 'autoadd on':
+                elif text.lower() == 'ออโต้บล็อค on':
                     settings["autoAdd"] = True
                     line.sendMessage(to, "Berhasil mengaktifkan Auto Add")
-                elif text.lower() == 'autoadd off':
+                elif text.lower() == 'ออโต้บล็อค off':
                     settings["autoAdd"] = False
                     line.sendMessage(to, "Berhasil menonaktifkan Auto Add")
-                elif text.lower() == 'autojoin on':
+                elif text.lower() == 'เข้ากลุ่ม on':
                     settings["autoJoin"] = True
                     line.sendMessage(to, "Berhasil mengaktifkan Auto Join")
-                elif text.lower() == 'autojoin off':
+                elif text.lower() == 'เข้ากลุ่ม off':
                     settings["autoJoin"] = False
                     line.sendMessage(to, "Berhasil menonaktifkan Auto Join")
-                elif text.lower() == 'autoleave on':
+                elif text.lower() == 'เข้าแชทรวม on':
                     settings["autoLeave"] = True
                     line.sendMessage(to, "Berhasil mengaktifkan Auto Leave")
-                elif text.lower() == 'autojoin off':
+                elif text.lower() == 'เข้าแชทรวม off':
                     settings["autoLeave"] = False
                     line.sendMessage(to, "Berhasil menonaktifkan Auto Leave")
-                elif text.lower() == 'autoread on':
+                elif text.lower() == 'อ่าน on':
                     settings["autoRead"] = True
                     line.sendMessage(to, "Berhasil mengaktifkan Auto Read")
-                elif text.lower() == 'autoread off':
+                elif text.lower() == 'เชคติ๊ก off':
                     settings["autoRead"] = False
                     line.sendMessage(to, "Berhasil menonaktifkan Auto Read")
                 elif text.lower() == 'checksticker on':
                     settings["checkSticker"] = True
                     line.sendMessage(to, "Berhasil mengaktifkan Check Details Sticker")
-                elif text.lower() == 'checksticker off':
+                elif text.lower() == 'เชคติ๊ก off':
                     settings["checkSticker"] = False
                     line.sendMessage(to, "Berhasil menonaktifkan Check Details Sticker")
-                elif text.lower() == 'detectmention on':
+                elif text.lower() == 'แทคเจ็บ on':
                     settings["datectMention"] = True
                     line.sendMessage(to, "Berhasil mengaktifkan Detect Mention")
-                elif text.lower() == 'detectmention off':
+                elif text.lower() == 'แทคเจ็บ off':
                     settings["datectMention"] = False
                     line.sendMessage(to, "Berhasil menonaktifkan Detect Mention")
 #==============================================================================#
@@ -581,7 +581,7 @@ def lineBot(op):
                     me = line.getContact(l_ineMID)
                     cover = line.getProfileCoverURL(lineMID)    
                     line.sendImageWithURL(msg.to, cover)
-                elif msg.text.lower().startswith("stealcontact "):
+                elif msg.text.lower().startswith("คท "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -594,7 +594,7 @@ def lineBot(op):
                             contact = line.getContact(ls)
                             mi_d = contact.mid
                             line.sendContact(msg.to, mi_d)
-                elif msg.text.lower().startswith("stealmid "):
+                elif msg.text.lower().startswith("มิด "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -607,7 +607,7 @@ def lineBot(op):
                         for ls in lists:
                             ret_ += "\n{}" + ls
                         line.sendMessage(msg.to, str(ret_))
-                elif msg.text.lower().startswith("stealname "):
+                elif msg.text.lower().startswith("ชื่อ "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -619,7 +619,7 @@ def lineBot(op):
                         for ls in lists:
                             contact = line.getContact(ls)
                             line.sendMessage(msg.to, "[ Display Name ]\n" + contact.displayName)
-                elif msg.text.lower().startswith("stealbio "):
+                elif msg.text.lower().startswith("ตัส "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -631,7 +631,7 @@ def lineBot(op):
                         for ls in lists:
                             contact = line.getContact(ls)
                             line.sendMessage(msg.to, "[ Status Message ]\n{}" + contact.statusMessage)
-                elif msg.text.lower().startswith("stealpicture "):
+                elif msg.text.lower().startswith("ดิส "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -643,7 +643,7 @@ def lineBot(op):
                         for ls in lists:
                             path = "http://dl.profile.line.naver.jp/" + line.getContact(ls).pictureStatus
                             line.sendImageWithURL(msg.to, str(path))
-                elif msg.text.lower().startswith("stealvideoprofile "):
+                elif msg.text.lower().startswith("วีดีโอ "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -655,7 +655,7 @@ def lineBot(op):
                         for ls in lists:
                             path = "http://dl.profile.line.naver.jp/" + line.getContact(ls).pictureStatus + "/vp"
                             line.sendImageWithURL(msg.to, str(path))
-                elif msg.text.lower().startswith("stealcover "):
+                elif msg.text.lower().startswith("ปก "):
                     if line != None:
                         if 'MENTION' in msg.contentMetadata.keys()!= None:
                             names = re.findall(r'@(\w+)', text)
@@ -668,7 +668,7 @@ def lineBot(op):
                             for ls in lists:
                                 path = line.getProfileCoverURL(ls)
                                 line.sendImageWithURL(msg.to, str(path))
-                elif msg.text.lower().startswith("cloneprofile "):
+                elif msg.text.lower().startswith("ขอปก "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -681,7 +681,7 @@ def lineBot(op):
                             line.sendMessage(msg.to, "Berhasil clone member tunggu beberapa saat sampai profile berubah")
                         except:
                             line.sendMessage(msg.to, "Gagal clone member")
-                elif text.lower() == 'restoreprofile':
+                elif text.lower() == 'แปลงปก':
                     try:
                         lineProfile.displayName = str(myProfile["displayName"])
                         lineProfile.statusMessage = str(myProfile["statusMessage"])
